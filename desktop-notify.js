@@ -190,7 +190,7 @@
         //Click-Function notification
         if (notification && !notification.ieVerification && notification.addEventListener && isFunction(options.click)) {
             notification.addEventListener("click", function () {
-                options.click(notification, wrapper);
+                options.click(notification, notificationWrapper);
             });
         }
         return notificationWrapper;
