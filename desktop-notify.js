@@ -188,11 +188,9 @@
             });
         }
         //Click-Function notification
-        if (notification && !notification.ieVerification && notification.addEventListener) {
+        if (notification && !notification.ieVerification && notification.addEventListener && isFunction(options.click)) {
             notification.addEventListener("click", function () {
-                notificationWrapper.close();
-                win.open().close()
-                win.focus()
+                options.click(notification, wrapper);
             });
         }
         return notificationWrapper;
