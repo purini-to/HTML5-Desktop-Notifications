@@ -187,6 +187,14 @@
                 }, settings.autoClose);
             });
         }
+        //Click-Function notification
+        if (notification && !notification.ieVerification && notification.addEventListener) {
+            notification.addEventListener("click", function () {
+                notificationWrapper.close();
+                win.open().close()
+                win.focus()
+            });
+        }
         return notificationWrapper;
     }
     win.notify = {
